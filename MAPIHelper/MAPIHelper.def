@@ -1,0 +1,11 @@
+; MAPIHelper.def : Declares the module parameters.
+
+LIBRARY      "MAPIHelper.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE
+	DisplayMessageStores
+	SaveSmsMessages

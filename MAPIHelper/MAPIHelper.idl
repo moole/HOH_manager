@@ -1,0 +1,20 @@
+// MAPIHelper.idl : IDL source for MAPIHelper
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (MAPIHelper.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(E42EC4E5-52F2-4697-8671-BD67CA7EBABC),
+	version(1.0),
+	helpstring("MAPIHelper 1.0 Type Library")
+]
+library MAPIHelperLib
+{
+	importlib("stdole2.tlb");
+	interface IDocHostUIHandlerDispatch;
+	interface IAxWinAmbientDispatchEx;
+};

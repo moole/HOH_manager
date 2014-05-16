@@ -1,0 +1,187 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C561C1A-6D66-434A-B018-B67591E53E7E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HOHManager</RootNamespace>
+    <AssemblyName>HOHManager</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.02</OSVersion>
+    <DeployDirSuffix>HOHManager</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Microsoft.Windowsce.Forms" />
+    <Reference Include="Microsoft.WindowsMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.WindowsMobile.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.WindowsMobile.PocketOutlook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GUI\ActualStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ActualStateForm.Designer.cs">
+      <DependentUpon>ActualStateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\CSVParser.cs" />
+    <Compile Include="GUI\EventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EventsForm.Designer.cs">
+      <DependentUpon>EventsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\HOHDefaults.cs" />
+    <Compile Include="DAL\HOHGameModel.cs" />
+    <Compile Include="Logic\DataManager.cs" />
+    <Compile Include="DAL\HOHGameRules.cs" />
+    <Compile Include="GUI\ImportExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ImportExportForm.Designer.cs">
+      <DependentUpon>ImportExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ListViewExtender.cs" />
+    <Compile Include="Logic\SMSManager.cs" />
+    <Compile Include="DAL\SMSMessageProcess.cs" />
+    <Compile Include="Logic\SMSSender.cs" />
+    <Compile Include="GUI\TeamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TeamsForm.Designer.cs">
+      <DependentUpon>TeamsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\HOHEvent.cs" />
+    <Compile Include="DAL\HOHPuzzle.cs" />
+    <Compile Include="DAL\HOHTeam.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\ActualStateForm.resx">
+      <DependentUpon>ActualStateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EventsForm.resx">
+      <DependentUpon>EventsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ImportExportForm.resx">
+      <DependentUpon>ImportExportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TeamsForm.resx">
+      <DependentUpon>TeamsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PuzzlesForm.resx">
+      <DependentUpon>PuzzlesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\SMSFetcher.cs" />
+    <Compile Include="Logic\SMSParser.cs" />
+    <Compile Include="GUI\PuzzlesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PuzzlesForm.Designer.cs">
+      <DependentUpon>PuzzlesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\TimeWatcher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CompactFormatterPlusSolution\CompactFramework\ADOHelper\ADOHelper.csproj">
+      <Project>{9D1F0F0B-5B31-4353-88D2-11ABBDD95027}</Project>
+      <Name>ADOHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CompactFormatterPlusSolution\CompactFramework\CompactFormatterPlus\CompactFormatterPlus.csproj">
+      <Project>{D334E206-753A-40B6-B31A-6401B5554D6F}</Project>
+      <Name>CompactFormatterPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CompactFormatterPlusSolution\CompactFramework\ISerial\ISerial.csproj">
+      <Project>{C94C0271-B1DD-4764-868F-90F298E05924}</Project>
+      <Name>ISerial</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\MAPIHelper\Windows Mobile 5.0 Pocket PC SDK %28ARMV4I%29\Release\MAPIHelper.dll">
+      <Link>MAPIHelper.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
